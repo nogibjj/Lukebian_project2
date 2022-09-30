@@ -7,17 +7,17 @@ from tabulate import tabulate
 app = typer.Typer()
 
 @app.command()
-def loadData(): 
-    """Load dataset"""
-    df = pd.read_csv('albumlist.csv')
-    table = df.iloc[[0,1],:]
+def datahead(): 
+    """show the fisrt 5 lines in dataset"""
+    df = pd.read_csv('albumlist.csv', encoding= 'unicode_escape')
+    table = df.head()
     print("Successfully load dataset")
     print(table)
 
 @app.command()
 def fetchlist():
     """fetch items list"""
-    df = pd.read_csv('albumlist.csv')
+    df = pd.read_csv('albumlist.csv', encoding= 'unicode_escape')
     print(df)
 
 
