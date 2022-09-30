@@ -15,12 +15,27 @@ def datahead():
     print(table)
 
 @app.command()
-def fetchlist():
-    """fetch items list"""
+def top5year():
+    """show top 5 years which have most albums selected in list"""
     df = pd.read_csv('albumlist.csv', encoding= 'unicode_escape')
-    print(df)
+    df = df.groupby(['Year'])['Album'].count()
+    df = df.sort_values(ascending = False)
+    print(df[0:5])
 
 
+@app.command()
+def albumyear():
+    """users can select a year and it will show all the albums released in that year in this list"""
+    df = pd.read_csv('albumlist.csv', encoding= 'unicode_escape')
+    year = input("please enter the year you want to search: ")
+    year = int(year)
+    if year > 2011:
+        print(" this list contains album that release between 1955 - 2011")
+    elif year <1955:
+        print(" this list contains album that release between 1955 - 2011")
+    else:
+        con = df["Year"] == year
+        print(df[con])
 
 
 if __name__ == "__main__":
