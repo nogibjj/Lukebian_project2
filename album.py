@@ -22,6 +22,17 @@ def top5year():
     df = df.sort_values(ascending = False)
     print(df[0:5])
 
+@app.command()
+def countartist():
+    """show the unique artists who entered the list"""
+    df = pd.read_csv('albumlist.csv', encoding= 'unicode_escape')
+    artist = df.Artist.unique()
+    artist.sort()
+    n = len(pd.unique(df['Artist']))
+    print(f'There are {n} artists who entered the 500 list')
+    print('They are')
+    print(artist)
+
 
 @app.command()
 def albumyear():
