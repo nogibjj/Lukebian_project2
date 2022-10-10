@@ -4,11 +4,10 @@ Build a Bash command-line tool that performs a useful data preparation task such
 
 ## How to use command line to run the data processing
 
-First, you need to install all the packages you will use
+First, you need to install all the packages you will use. Type in the code in your terminal
 ```
-{
  pip install -r requirements.txt
-}
+ 
 ```
 
 ## Acknowledgments
