@@ -23,3 +23,8 @@ artist=$(cut -d',' -f4 albumlist.csv | sort | uniq | wc -l)
 echo "the number of unique artists are: "
 echo ""
 echo $artist
+echo ""
+genre=$(cut -d',' -f5 albumlist.csv | sort | uniq | wc -l)
+echo "the number of unique genres are: "
+echo ""
+echo $genre
