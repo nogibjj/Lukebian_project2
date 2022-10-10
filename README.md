@@ -22,11 +22,13 @@ you can check all the commands you can use to process the data. They are
  python album.py datahead    
  python album.py top5year     
  
-```
+ 
 albumyear    users can select a year and it will show all the albums' year
 countartist  show the unique artists who entered the list
 datahead     show the fisrt 5 lines in dataset
 top5year     show top 5 years which have most albums selected in list
+```
+
 
 you can type in the 
 ```
